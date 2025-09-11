@@ -52,22 +52,22 @@ pipeline {
             parallel {
                 stage('20-BASTION') {    
                     steps {
-                        build job: '20-bastion', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
+                        build job: '20-BASTION', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
                     }
                 }
                 stage('30-RDS') {
                     steps {
-                        build job: '30-rds', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
+                        build job: '30-RDS', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
                     }
                 }
                 stage('40-EKS') {
                     steps {
-                        build job: '40-eks', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
+                        build job: '40-EKS', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
                     }
                 }
                 stage('50-ECR') {
                     steps {
-                        build job: '50-ecr', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
+                        build job: '50-ECR', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
                     }
                 }
             }
@@ -76,7 +76,7 @@ pipeline {
             stages {
                 stage('60-ACM') {
                     steps {
-                        build job: '60-acm', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
+                        build job: '60-ACM', parameters: [string(name: 'ACTION', value: 'apply')], wait: false
                     }
                 }
                 stage('70-ingress-alb') {
