@@ -1,12 +1,13 @@
 module "vpc" {
   #source            = "../../../../aws-terraform-vpc"
-  source = "git::https://github.com/hussainbi03/terraform-aws-vpc.git?ref=main"
-  project           = var.project_name
+  #source = "git::https://github.com/hussainbi03/terraform-aws-vpc.git?ref=main"
+  source = "git::https://github.com/hussainbi03/aws-terraform-vpc.git?ref=main"
+  project           = var.project
   environment       = var.environment
   vpc_cidr          = var.cidr_block
   common_tags       = var.common_tags
   public_subnet_cidrs = var.public_cidr_block
-  privatec_subnet_cidrs = var.private_cidr_block
+  private_subnet_cidrs = var.private_cidr_block
   database_subnet_cidrs = var.database_cidr_block
   is_peering_required = true
 
