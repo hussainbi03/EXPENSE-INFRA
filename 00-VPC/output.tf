@@ -1,6 +1,6 @@
-output "aws_azs" {
-  value = module.vpc.aws_az
-}
+# output "aws_azs" {
+#   value = module.vpc.aws_az
+# }
 
 output "public_subnet_ids" {
     value = module.vpc.public_subnet_ids
