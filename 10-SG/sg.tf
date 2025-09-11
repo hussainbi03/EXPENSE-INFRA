@@ -11,7 +11,8 @@ module "sg-mysql" {
 
 
 module "sg-bastion" {
-    source = "../../../terraform-aws-sg-module"
+    #source = "../../../terraform-aws-sg-module"
+    source = "git::https://github.com/hussainbi03/terraform-aws-sg-module.git?ref=main"
     project = var.project
     environment = var.environment
     sg_name= "bastion"
@@ -21,7 +22,8 @@ module "sg-bastion" {
 }
 
 module "sg-alb-ingress" {
-    source = "../../../terraform-aws-sg-module"
+    #source = "../../../terraform-aws-sg-module"
+    source = "git::https://github.com/hussainbi03/terraform-aws-sg-module.git?ref=main"
     project = var.project
     environment = var.environment
     sg_name= "alb"
@@ -30,7 +32,8 @@ module "sg-alb-ingress" {
     vpc_id =  data.aws_ssm_parameter.vpc_id.value
 }
 module "sg-eks-control-plane" {
-    source = "../../../terraform-aws-sg-module"
+    #source = "../../../terraform-aws-sg-module"
+    source = "git::https://github.com/hussainbi03/terraform-aws-sg-module.git?ref=main"
     project = var.project
     environment = var.environment
     sg_name= "sg-eks-control-plane"
@@ -40,7 +43,8 @@ module "sg-eks-control-plane" {
 }
 
 module "sg-eks-node" {
-    source = "../../../terraform-aws-sg-module"
+    #source = "../../../terraform-aws-sg-module"
+    source = "git::https://github.com/hussainbi03/terraform-aws-sg-module.git?ref=main"
     project = var.project
     environment = var.environment
     sg_name= "sg-eks-node"
