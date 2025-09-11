@@ -6,9 +6,9 @@ module "vpc" {
   environment       = var.environment
   vpc_cidr          = var.cidr_block
   common_tags       = var.common_tags
-  public_subnet_cidrs = var.public_cidr_block
-  private_subnet_cidrs = var.private_cidr_block
-  database_subnet_cidrs = var.database_cidr_block
+  public_cidr_block = var.public_cidr_block
+  private_cidr_blocks = var.private_cidr_block
+  database_cidr_block = var.database_cidr_block
   is_peering_required = true
 
 }
