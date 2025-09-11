@@ -7,7 +7,7 @@ terraform {
   }
   backend "s3" {
   bucket = "82sn-remote-state"
-  key = "sg-expense-acm"
+  key = "sg-expense-ingress"
   region = "us-east-1"
   dynamodb_table = "82s-state-locking"
 }
