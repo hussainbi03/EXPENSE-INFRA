@@ -37,7 +37,7 @@ pipeline {
                script{
                 withAWS(region: 'us-east-1', credentials: 'aws-creds') {
                     sh """
-                        cd 00-vpc
+                        cd 00-VPC
                         terraform apply -auto-approve
                     """
                 }
@@ -50,7 +50,7 @@ pipeline {
                 expression { params.ACTION == 'apply'}
             }
             steps{
-                build job: '10-sg', parameters: [string(name: 'ACTION', value: 'apply')], propagate: true
+                build job: '10-SG', parameters: [string(name: 'ACTION', value: 'apply')], propagate: true
             }
         }
     }
