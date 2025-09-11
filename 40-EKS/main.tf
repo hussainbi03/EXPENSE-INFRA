@@ -44,6 +44,7 @@ module "eks" {
       #ami_type       = "AL2_x86_64"
       instance_types = ["m5.xlarge"]
       key_name = aws_key_pair.eks.key_name
+      capacity_type = "SPOT"
 
       min_size     = 1
       max_size     = 10
